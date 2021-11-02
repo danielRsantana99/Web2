@@ -1,0 +1,31 @@
+body {
+  width: 500px;
+  margin: 0 auto;
+}
+
+p {
+  background: white;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+
+}
+#nav{
+  background: black;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+
+}
+
+body{
+	background: #E54B4B;
+	width: 100%;
+}
+
+#titulo{
+	background: #FFF;
+	width: auto;
+}
+
+
