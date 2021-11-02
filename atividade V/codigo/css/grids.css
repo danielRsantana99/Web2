@@ -1,0 +1,21 @@
+body {
+    width: 90%;
+    max-width: 900px;
+    margin: 2em auto;
+    background: #6E8894;
+}
+
+.container > div {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #969696;
+    border: 2px solid #544E61;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
