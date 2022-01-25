@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Cliente extends Model{
+	use HasFactory;
+
+    //nome da tabela
+    protected $table= "cliente";
+
+
+      //permite salvar menos campos no bd
+    protected $guarded = [
+    	'id',
+    	'nome',
+    	'telefone',
+    	'cnpj',
+    	'cpf',
+    	'debito'
+
+    ];
+    
+
+    function venda(){
+        return $this->hasMany(Venda::class, 'id_cliente', 'id');
+    }
+}
+
+
+
+
+?>
