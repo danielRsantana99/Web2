@@ -12,7 +12,6 @@
 <div align="center">
     <h3><i>Tecnologias Utilizadas</i></h3>
     <img src="https://img.shields.io/badge/LARAVEL-777BB4?style=for-the-badge&logo=laravel&logoColor=white">
-    <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
     <img src="https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white">
 </div>
 
