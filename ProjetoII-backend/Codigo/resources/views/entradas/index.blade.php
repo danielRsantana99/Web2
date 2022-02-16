@@ -1,25 +1,12 @@
 @extends('layouts.main')
 
-@section('titulo','Entrada)
+@section('titulo','Entrada')
 
 @section('conteudo')
 	<div class="row">
-		<div class="col-sm-4">
-            <div class="form-form-group">
-                <label class="h6 small d-block text-uppercase">
-                    Pesquisar
-                </label>
-                <input class="form-control" type="text" name="pesquisa" id="pesquisa" placeholder="">
-              
-            </div>
-        </div>
         <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="PESQUISAR">
+            <a href="{{ URL::asset('entradas/create'); }}" class="btn btn-primary" >CADASTRAR NOVA ENTRADA</a>
         </div>
-        <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="CADASTRAR ENTRADA">
-        </div>
-         
 	</div>
 	<table class="table">
 	  <thead>
@@ -39,10 +26,12 @@
 	      <td>
 	      	<div class="row">
 	      		<div class="col-sm-6">
-	      			<a class="btn btn-primary"  href="{{route('entradas.edit, ['id' => $key->id])}}">editar cliente</a>
+	      			<form action="{{route('entradas.edit',['id' => $key->id])}}" method="GET">
+						<input class="btn btn-warning" type="submit" value="EDITAR">
+					</form>
 	      		</div>
 	      		<div class="col-sm-6">
-	      			<form action="{{route('entradas.destroy ['id' => $key->id])}}" method="POST">
+	      			<form action="{{route('entradas.destroy',['id' => $key->id])}}" method="POST">
 						@csrf
 						@method('DELETE')
 						<input class="btn btn-danger" type="submit" value="DELETAR">

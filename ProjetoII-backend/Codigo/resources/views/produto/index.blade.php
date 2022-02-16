@@ -4,42 +4,19 @@
 
 @section('conteudo')
 	<div class="row">
-		<div class="col-sm-4">
-            <div class="form-form-group">
-                <label class="h6 small d-block text-uppercase">
-                    Pesquisar
-                </label>
-                <input class="form-control" type="text" name="pesquisa" id="pesquisa" placeholder="">
-              
-            </div>
+         <div class="col-sm-4" style="margin-top: 24px;">
+            <a href="{{ URL::asset('produto/create'); }}" class="btn btn-primary" >CADASTRAR NOVO PRODUTO</a>
         </div>
-        <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="PESQUISAR">
-        </div>
-        <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="CADASTRAR PRODUTO">
-        </div> 
 	</div>
-	<table class="table">
+	<div class="table-responsive">
+		<table class="table">
 	  <thead>
 	    <tr>
-	      <th scope="col">MOTOR</th>
-	      <th scope="col">CARRO</th>
-	      <th scope="col">VALVULA</th>
-	      <th scope="col">FABRICAÇÃO</th>
-	      <th scope="col">CATEGORIA</th>
-	      <th scope="col">MARCA</th>
-	      <th scope="col">LOCALIZAÇÃO</th>
+	      <th scope="col">DADOS BASICOS</th>
 	      <th scope="col">REFERENCIA</th>
 	      <th scope="col">UNIDADE</th>
-	      <th scope="col">ICMS</th>
-	      <th scope="col">IPI</th>
-	      <th scope="col">FRETE</th>
-	      <th scope="col">PREÇO FABRICA</th>
-	      <th scope="col">PREÇO COMPRA</th>
-	      <th scope="col">PREÇO VENDA</th>
-	      <th scope="col">LUCRO</th>
-	      <th scope="col">DESCONTO</th>
+	      <th scope="col">IMPOSTOS</th>
+	      <th scope="col">PREÇOS</th>
 	      <th scope="col">QUANTIDADE</th>
 	      <th scope="col">OPÇÕES</th>
 	    </tr>
@@ -48,23 +25,25 @@
 	  	@foreach ($produtos as $key)
 	    <tr>
 	      
-	      <td>{{$key->idmotor}}</td>
-	      <td>{{$key->idcarro}}</td>
-	      <td>{{$key->idvalvula}}</td>
-	      <td>{{$key->idfabricacao}}</td>
-	      <td>{{$key->idcategoria}}</td>
-	      <td>{{$key->idmarca}}</td>
-	      <td>{{$key->idlocalizacao}}</td>
+	      <td>MOTOR: {{$key->idmotor}} <br>
+      	  	CARRO: {{$key->idcarro}} <br>
+      	  	VALVULA: {{$key->idvalvula}} <br>
+      	  	FABRICAÇÃO: {{$key->idfabricacao}} <br>
+			CATEGORIA: {{$key->idcategoria}} <br>
+			MARCA: {{$key->idmarca}} <br>
+			LOCALIZAÇÃO: {{$key->idlocalizacao}}
+	      </td>
 	      <td>{{$key->referencia}}</td>
 	      <td>{{$key->unidade}}</td>
-	      <td>{{$key->icms}}</td>
-	      <td>{{$key->ipi}}</td>
-	      <td>{{$key->frete}}</td>
-	      <td>{{$key->precofabrica}}</td>
-	      <td>{{$key->precocompra}}</td>
-	      <td>{{$key->precovenda}}</td>
-	      <td>{{$key->lucro}}</td>
-	      <td>{{$key->desconto}}</td>
+	      <td>ICMS: {{$key->icms}} <br>
+	      	IPI: {{$key->ipi}} <br>
+	      	FRETE: {{$key->frete}} <br>
+			LUCRO: {{$key->lucro}} <br>
+			DESCONTO: {{$key->desconto}}
+	      </td>
+	      <td>FABRICA: {{$key->precofabrica}} <br>
+      		VENDA:{{$key->precovenda}} <br>
+  			COMPRA: {{$key->precocompra}}</td>
 	      <td>{{$key->quantidade}}</td>
 	      <td>
 	      	<div class="row">
@@ -86,4 +65,6 @@
 	    @endforeach
 	  </tbody>
 	</table>
+	</div>
+	
 @endsection('conteudo')

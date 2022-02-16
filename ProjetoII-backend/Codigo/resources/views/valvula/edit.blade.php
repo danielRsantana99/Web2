@@ -3,7 +3,7 @@
 @section('titulo','Editar Cliente')
 
 @section('conteudo')
-    <form class="contact_form" action="{{route('', ['' => $->])}}" method="POST">
+    <form class="contact_form" action="{{route('valvula.update', ['id' => $valvula->id])}}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">

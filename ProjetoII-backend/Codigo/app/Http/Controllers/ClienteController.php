@@ -17,7 +17,7 @@ class ClienteController extends Controller
 	public function create(){
 		
      
-		return view('clientes.create');
+		return view('clientes/create');
 	}
 
 
@@ -30,13 +30,15 @@ class ClienteController extends Controller
 		'debito'=>'required',		
 		]);
 		
-		$Cliente - new cliente();
+		$Cliente = new cliente();
 		$Cliente->nome = $resquest->nome;
 		$Cliente->telefone= $resquest->telefone;
 		$Cliente->cnpj = $resquest->cnpj;
 		$Cliente->cpf = $resquest->cpf;
 		$Cliente->debito = $resquest->debito;
 		$Cliente->save();
+
+		return redirect('clientes.create')->with('msg','cliente inserido com sucesso');
 	}
 
 
@@ -48,8 +50,16 @@ class ClienteController extends Controller
 		'cpf'=>'required',	
 		'debito'=>'required',		
 		]);
-		Cliente::find($resquest->id)->update($resquest->except('_method'));
-		return redirect('clientes/index')->with('msg','Cadastro realizado com sucesso');
+		$cliente = Cliente::findOrFail($resquest->id);
+		$cliente->update([
+			'nome'=>$resquest->nome,
+			'telefone'=>$resquest->telefone,
+			'cnpj'=>$resquest->cnpj,
+			'cpf'=>$resquest->cpf,
+			'debito'=>$resquest->debito,
+		]);
+		
+		return redirect('clientes/')->with('msg','Cadastro realizado com sucesso');
 	}	
 	
 	public function show($id){
@@ -63,13 +73,14 @@ class ClienteController extends Controller
 
 	public function edit($id){
 		$Cliente = cliente::find($id);
-		return view('clientes.edit',['cliente'=>$Cliente]);
+		return view('clientes/edit',['cliente'=>$Cliente]);
 	}
 
 
 	public function destroy($id){
 		cliente::findOrFail($id)->delete();
-		return redirect('clientes/index')->with('msg','cliente apagado com sucesso');
+
+		return redirect('clientes/')->with('msg','cliente apagado com sucesso');
 
 	}
 }

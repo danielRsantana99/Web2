@@ -3,7 +3,7 @@
 @section('titulo','Cadastrar Cliente')
 
 @section('conteudo')
-    <form class="contact_form" action="{{route('')}}" method="POST">
+    <form class="contact_form" action="{{route('marca.create')}}" method="POST">
         @csrf
         <div class="row">
             <div class="col-sm-12">

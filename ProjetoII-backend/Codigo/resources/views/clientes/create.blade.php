@@ -3,7 +3,7 @@
 @section('titulo','Cadastrar Cliente')
 
 @section('conteudo')
-    <form class="contact_form" action="{{route('clientes.create')}}" method="POST">
+    <form class="contact_form" action="{{route('clientes.store')}}" method="POST">
         @csrf
         <div class="row">
             <div class="col-sm-6 mb-6">

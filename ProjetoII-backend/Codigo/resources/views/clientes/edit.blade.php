@@ -3,6 +3,7 @@
 @section('titulo','Editar Cliente')
 
 @section('conteudo')
+    
     <form class="contact_form" action="{{route('clientes.update', ['id' => $cliente->id])}}" method="POST">
         @csrf
         @method('PUT')
@@ -14,7 +15,7 @@
                         <span class="text-danger">*</span>
                     </label>
                     <div class="input-group">
-                        <input class="form-control @error('nome') is-invalid @enderror" type="text" name="nome" id="nome" placeholder="">
+                        <input class="form-control @error('nome') is-invalid @enderror" type="text" name="nome" id="nome" placeholder="" value="{{$cliente->nome}}">
                         @error('nome')
                         <div class="invalid-feedaback">
                             {{message}}
@@ -32,7 +33,7 @@
                     </label>
 
                     <div class="input-group">
-                        <input class="form-control @error('telefone') is-invalid @enderror" type="numeric" name="telefone" id="telefone" placeholder="">
+                        <input class="form-control @error('telefone') is-invalid @enderror" type="numeric" name="telefone" id="telefone" placeholder="" value="{{$cliente->telefone}}">
                         @error('telefone')
                         <div class="invalid-feedaback">
                             {{message}}
@@ -52,7 +53,7 @@
                         <span class="text-danger">*</span>
                     </label>
                     <div class="input-group">
-                        <input class="form-control @error('cpf') is-invalid @enderror" type="text" name="cpf" id="cpf" placeholder="">
+                        <input class="form-control @error('cpf') is-invalid @enderror" type="text" name="cpf" id="cpf" placeholder="" value="{{$cliente->cpf}}">
                         @error('cpf')
                         <div class="invalid-feedaback">
                             {{message}}
@@ -69,7 +70,7 @@
                         <span class="text-danger">*</span>
                     </label>
                     <div class="input-group">
-                        <input class="form-control @error('cnpj') is-invalid @enderror" type="text" name="cnpj" id="cnpj" placeholder="">
+                        <input class="form-control @error('cnpj') is-invalid @enderror" type="text" name="cnpj" id="cnpj" placeholder="" value="{{$cliente->cnpj}}">
                         @error('cnpj')
                         <div class="invalid-feedaback">
                             {{message}}
@@ -87,7 +88,7 @@
                     </label>
 
                     <div class="input-group">
-                        <input class="form-control @error('debito') is-invalid @enderror" type="text" name="debito" id="debito" placeholder="">
+                        <input class="form-control @error('debito') is-invalid @enderror" type="text" name="debito" id="debito" placeholder="" value="{{$cliente->debito}}">
                         @error('debito')
                         <div class="invalid-feedaback">
                             {{message}}

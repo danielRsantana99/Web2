@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Entrada;
+use App\Models\Fornecedor;
 
 class EntradaController extends Controller
 {
@@ -12,6 +13,12 @@ class EntradaController extends Controller
 		$Entrada = entrada::all();
      
 		return view('entradas.index', ['entrada' =>$Entrada]);
+	}
+
+	public function buscar(){
+		$Fornecedor = fornecedor::all();
+     
+		return view('entradas.create', ['fornecedor' =>$Fornecedor]);
 	}
 
 	public function create(){

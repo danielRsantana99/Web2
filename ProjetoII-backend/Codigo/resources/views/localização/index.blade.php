@@ -4,21 +4,9 @@
 
 @section('conteudo')
 	<div class="row">
-		<div class="col-sm-4">
-            <div class="form-form-group">
-                <label class="h6 small d-block text-uppercase">
-                    Pesquisar
-                </label>
-                <input class="form-control" type="text" name="pesquisa" id="pesquisa" placeholder="">
-              
-            </div>
+	    <div class="col-sm-4" style="margin-top: 24px;">
+            <a href="{{ URL::asset('localização/create'); }}" class="btn btn-primary" >CADASTRAR NOVA LOCALIZAÇÃO</a>
         </div>
-        <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="PESQUISAR">
-        </div>
-        <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="CADASTRAR LOCALIZAÇÃO">
-        </div> 
 	</div>
 	<table class="table">
 	  <thead>
@@ -34,10 +22,10 @@
 	      <td>
 	      	<div class="row">
 	      		<div class="col-sm-6">
-	      			<a class="btn btn-primary" href="{{route('.edit, ['id' => $->id])}}">editar localização</a>
+	      			<a class="btn btn-primary" href="{{route('localização.edit, ['id' => $localização->id])}}">editar localização</a>
 	      		</div>
 	      		<div class="col-sm-6">
-	      			<form action="{{route('.destroy',['id' => $->id])}}" method="POST">
+	      			<form action="{{route('localização.destroy',['id' => $localização->id])}}" method="POST">
 						@csrf
 						@method('DELETE')
 						<input class="btn btn-danger" type="submit" value="DELETAR">

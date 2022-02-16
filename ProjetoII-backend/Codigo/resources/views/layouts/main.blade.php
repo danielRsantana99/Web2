@@ -14,7 +14,7 @@
     <div class="sidebar">
         <h2>Socape</h2>
         <ul>         
-            <li><a href="{{ URL::asset('layouts/main'); }}"><i class="fas fa-home"></i>Home</a></li>
+            <li><a href="{{ URL::asset('/'); }}"><i class="fas fa-home"></i>Home</a></li>
             <li><a href="{{ URL::asset('clientes/'); }}"><i class="fas fa-user"></i>Cliente</a></li>
             <li><a href="{{ URL::asset('entradas/'); }}"><i class="fas fa-bus"></i>Entrada</a></li>
             <li><a href="{{ URL::asset('venda/'); }}"><i class="fas fa-piggy-bank"></i>Venda</a></li>
@@ -23,9 +23,11 @@
         </ul> 
     </div>
     <div class="main_content">
-        <div class="header"><h2>@yield('titulo')</h2></div>  
+        <div class="header"><h2>@yield('titulo')</h2></div>
+          
         <div id="conteudo">
-          @yield('conteudo')
+        @yield('conteudo')
+
         </div>
         <div id="footer">
           

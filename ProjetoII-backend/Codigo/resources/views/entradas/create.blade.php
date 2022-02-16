@@ -10,19 +10,14 @@
             <div class="col-sm-4">
                 <div class="form-group">
                     <label class="h6 small d-block text-uppercase">
-                        ID FORNECEDOR
+                         ID FORNECEDOR
                         <span class="text-danger">*</span>
                     </label>
-
-                    <div class="input-group">
-                        <input class="form-control @error('idfornecedor') is-invalid @enderror" type="text" name="idfornecedor" id="idfornecedor"  placeholder="">
-                        @error('idfornecedor')
-                        <div class="invalid-feedaback">
-                            {{message}}
-                        </div>
-
-                        @enderror
-                    </div>
+                    <select class="form-select" aria-label="Default select example" name="idfornecedor" id="idfornecedor">
+                     @foreach($fornecedores as $key)
+                      <option value="{{$key->id}}">{{$key->nome}}</option>
+                      @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-sm-4">

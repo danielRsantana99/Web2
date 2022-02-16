@@ -4,20 +4,8 @@
 
 @section('conteudo')
 	<div class="row">
-		<div class="col-sm-4">
-            <div class="form-form-group">
-                <label class="h6 small d-block text-uppercase">
-                    Pesquisar
-                </label>
-                <input class="form-control" type="text" name="pesquisa" id="pesquisa" placeholder="">
-              
-            </div>
-        </div>
-        <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="PESQUISAR">
-        </div>
-        <div class="col-sm-4" style="margin-top: 24px;">
-            <input name="submit" type="submit" class="btn btn-primary" value="CADASTRAR FABRICAÇÃO">
+         <div class="col-sm-4" style="margin-top: 24px;">
+            <a href="{{ URL::asset('fabricação/create'); }}" class="btn btn-primary" >CADASTRAR NOVA FABRICAÇÃO</a>
         </div>
          
 	</div>

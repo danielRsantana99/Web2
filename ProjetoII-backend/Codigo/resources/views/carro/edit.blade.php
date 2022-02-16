@@ -3,7 +3,7 @@
 @section('titulo','Editar Carro')
 
 @section('conteudo')
-    <form class="contact_form" action="{{route('', ['' => $->])}}" method="POST">
+    <form class="contact_form" action="{{route('carro.update', ['id' => $carro->id])}}" method="POST">
         @csrf
         @method('PUT')
         <div class="row">

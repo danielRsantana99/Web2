@@ -28,12 +28,13 @@ class FornecedorController extends Controller
 		'cnpj'=>'required',
 		'endereco'=>'required',	
 		]);
-		$Fornecedor - new fornecedor();
+		$Fornecedor = new fornecedor();
 		$Fornecedor->nome = $resquest->nome;
 		$Fornecedor->telefone = $resquest->telefone;
 		$Fornecedor->cnpj= $resquest->cnpj;
 		$Fornecedor->endereco= $resquest->endereco;
 		$Fornecedor->save();
+		return redirect('fornecedores/')->with('msg','Cadastro realizado com sucesso');
 	}
 
 	public function show($id){
